@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(135deg, #0c1b2a, #1b3a5a);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#app {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px #000;
+}
+
+input.form-control {
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+
+button {
+    border-radius: 10px !important;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+.card {
+    background: linear-gradient(145deg, #1e2f45, #0f1c2e);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+
+.card img {
+    padding: 10px;
+}
+
+
+.card-body {
+    text-align: center;
+}
+
+
+.card p {
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+
+.card .btn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+}
+
+.card .btn:hover {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+}
+
+.progress {
+    height: 25px;
+    border-radius: 15px;
+    background-color: #0f1c2e;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #00ffcc, #00aaff);
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+}
+
+.btn-success {
+    background-color: #22c55e;
+}
+
+.btn-warning {
+    background-color: #facc15;
+    color: #000;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1e2f45, #0f1c2e);
+    color: white;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    color: #ffd700;
+}
+
+.modal-body img {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+}
+.modal-backdrop {
+    position: relative;
+}

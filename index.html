@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Clash Royale API</title>
+  <meta name="description" content="Catálogo Clash Royale con Vue">
+  <meta name="keywords" content="API, Vue, Clash Royale">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  <div id="app" class="container mt-4">
+
+    <h1 class="text-center mb-4">Catálogo Clash Royale</h1>
+
+
+    <input type="text" class="form-control mb-3" placeholder="Buscar carta..." v-model="busqueda">
+
+
+    <div class="progress mb-3">
+      <div class="progress-bar" role="progressbar" :style="{width: porcentaje + '%'}">
+        {{ porcentaje }}%
+      </div>
+    </div>
+
+    <div class="mb-3 text-center container d-flex justify-content-between">
+      <button class="btn btn-secondary me-2" @click="filtroRareza('')">Todas</button>
+      <button class="btn btn-primary me-2" @click="filtroRareza('common')">Comunes</button>
+      <button class="btn btn-success me-2" @click="filtroRareza('rare')">Raras</button>
+      <button class="btn btn-warning me-2" @click="filtroRareza('epic')">Épicas</button>
+      <button class="btn btn-danger" @click="filtroRareza('legendary')">Legendarias</button>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4 mb-3" v-for="carta in filtradas" :key="carta.id">
+
+        <div class="card">
+          <img :src="carta.iconUrls.medium" class="card-img-top">
+
+          <div class="card-body">
+            <h5 v-text="carta.name"></h5>
+
+            <p>Elixir: {{ carta.elixirCost }}</p>
+
+            <button class="btn btn-primary" @click="verDetalle(carta)">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="modalDetalle">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">
+              {{ seleccion.name }}
+            </h5>
+          </div>
+
+
+          <div class="modal-body">
+            <img :src="seleccion.iconUrls?.medium" class="img-fluid">
+
+            <p><b>Elixir:</b> {{ seleccion.elixirCost }}</p>
+            <p><b>Rareza:</b> {{ seleccion.rarity }}</p>
+            <p><b>Nivel Máximo:</b> {{seleccion.maxLevel}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/vue3.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="js/funciones.js"></script>
+
+
+</body>
+
+</html>
